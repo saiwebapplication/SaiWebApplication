@@ -25,27 +25,22 @@ namespace WebAppSai
             using (var scope = container.BeginLifetimeScope())
             {
                 var login = scope.Resolve<ILogin>();
-                using (dtUser = login.GetUserByUserName(txtUserName.Text.Trim()))
+                using (dtUser = login.GetUserByUserName(txtUserName.Text.Trim(), txtPassword.Text))
                 {
                     if (dtUser != null && dtUser.AsEnumerable().Any())
                     {
                         userId = Convert.ToInt32(dtUser.Rows[0]["UserId"].ToString());
-                        if (txtPassword.Text.Equals(dtUser.Rows[0]["Password"].ToString()))
+                        using (dsUserRole = login.GetUserRolesByUserId(userId))
                         {
-                            using (dsUserRole = login.GetUserRolesByUserId(userId))
+                            if (dsUserRole != null && dsUserRole.Tables.Count > 0 && dsUserRole.Tables[0].AsEnumerable().Any())
                             {
-                                if (dsUserRole != null && dsUserRole.Tables.Count > 0 && dsUserRole.Tables[0].AsEnumerable().Any())
-                                {
-                                    roles = dsUserRole.Tables[0].Rows[0]["Roles"].ToString();
-                                }
+                                roles = dsUserRole.Tables[0].Rows[0]["Roles"].ToString();
                             }
+                        }
 
-                            SetRoles(userId.ToString(), roles);
-                        }
-                        else
-                        {
-                            lblMessage.InnerText = "Invalid username/password";
-                        }
+                        SetRoles(userId.ToString(), roles);
+                        Business.Context.UserName = string.Format("{0} {1}", dsUserRole.Tables[0].Rows[0]["FirstName"].ToString(), dsUserRole.Tables[0].Rows[0]["LastName"].ToString());
+                        Response.Redirect(@"Dashboard.aspx");
                     }
                     else
                     {

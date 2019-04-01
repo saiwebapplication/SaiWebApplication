@@ -11,7 +11,7 @@ namespace DataAccess
 {
     public class Login : ILogin
     {
-        public DataTable GetUserByUserName(string userName)
+        public DataTable GetUserByUserName(string userName, string password)
         {
             using (DataTable dt = new DataTable())
             {
@@ -23,6 +23,7 @@ namespace DataAccess
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.CommandText = "usp_GetUserByUserName";
                         cmd.Parameters.AddWithValue("@UserName", userName);
+                        cmd.Parameters.AddWithValue("@Password", password);
                         if (con.State == ConnectionState.Closed)
                             con.Open();
                         using (SqlDataAdapter da = new SqlDataAdapter(cmd))

@@ -496,6 +496,7 @@
     <Content Include="bower_components\raphael\license.txt" />
     <Content Include="bower_components\raphael\raphael-min.js" />
     <Content Include="bower_components\raphael\raphael.js" />
+    <Content Include="ControlPanel\RoleAccessLevel.aspx" />
     <Content Include="Dashboard.aspx" />
     <Content Include="dist\css\custom-popup.css" />
     <Content Include="dist\css\custom15112018.css" />
@@ -547,6 +548,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ControlPanel\RoleAccessLevel.aspx.cs">
+      <DependentUpon>RoleAccessLevel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ControlPanel\RoleAccessLevel.aspx.designer.cs">
+      <DependentUpon>RoleAccessLevel.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Dashboard.aspx.cs">
       <DependentUpon>Dashboard.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

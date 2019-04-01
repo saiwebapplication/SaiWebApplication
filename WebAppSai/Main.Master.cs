@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace WebAppSai
 {
@@ -11,7 +6,10 @@ namespace WebAppSai
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                lblUserName.Text = string.Format("Welcome {0}", Business.Context.UserName);
+            }
         }
     }
 }

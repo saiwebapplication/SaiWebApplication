@@ -17,8 +17,8 @@ namespace Business.Utilities
             this._Login = login; 
         }
 
-        public DataTable GetUserByUserName(string userName) {
-            return _Login.GetUserByUserName(userName);
+        public DataTable GetUserByUserName(string userName, string password) {
+            return _Login.GetUserByUserName(userName, password);
         }
         public DataSet GetUserRolesByUserId(int userId) {
             return _Login.GetUserRolesByUserId(userId);

@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="WebAppSai.Main" %>
+﻿<%@ master language="C#" autoeventwireup="true" codebehind="Main.master.cs" inherits="WebAppSai.Main" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -20,7 +20,7 @@
     <link href="/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet"
         type="text/css">
     <link href="/dist/css/custom15112018.css" rel="stylesheet" />
-   
+
     <!-- jQuery -->
     <script src="/bower_components/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap Core JavaScript -->
@@ -60,7 +60,7 @@
             m = checkTime(m);
             s = checkTime(s);
             $("#liClock").html(
-            h + ":" + m + ":" + s);
+                h + ":" + m + ":" + s);
             var t = setTimeout(startTime, 500);
         }
         function checkTime(i) {
@@ -75,15 +75,15 @@
     <form id="form1" runat="server">
 
         <div id="wrapper">
-            
-        <div class="divWaiting hide">
-            <div class="loading">
-                <div class="loading-bar"></div>
-                <div class="loading-bar"></div>
-                <div class="loading-bar"></div>
-                <div class="loading-bar"></div>
+
+            <div class="divWaiting hide">
+                <div class="loading">
+                    <div class="loading-bar"></div>
+                    <div class="loading-bar"></div>
+                    <div class="loading-bar"></div>
+                    <div class="loading-bar"></div>
+                </div>
             </div>
-        </div>
             <!-- Navigation -->
             <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
                
@@ -100,10 +100,14 @@
             <!-- /.navbar-header -->
          
             <ul class="nav navbar-top-links navbar-right">   
+                <li>                    
+                    <asp:Label ID="lblUserName" runat="server" Text="" style="color:#23527C; margin:10px"></asp:Label>
+                </li>
                 <li id="liClock" runat="server" style="color:#23527C" class="dropdown glyphicon">
                 </li>
                 <!-- /.dropdown -->
-                <li><a href="../MainLogout.aspx" title="Logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                <li>
+                    <a href="../MainLogout.aspx" title="Logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                 </li>
                 <!-- /.dropdown -->
             </ul>
