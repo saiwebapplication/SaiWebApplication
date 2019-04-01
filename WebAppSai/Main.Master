@@ -1,0 +1,173 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="WebAppSai.Main" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <link href="/images/favicon.ico" type="image/x-icon" rel="shortcut icon" />
+    <link href="/images/favicon.ico" type="image/x-icon" rel="icon" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Bootstrap Core CSS -->
+    <link href="/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- MetisMenu CSS -->
+    <link href="/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="/dist/css/sb-admin-2.css" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link href="/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet"
+        type="text/css">
+    <link href="/dist/css/custom15112018.css" rel="stylesheet" />
+   
+    <!-- jQuery -->
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="/bower_components/metisMenu/dist/metisMenu.min.js"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="/dist/js/sb-admin-2.js"></script>
+    <script src="http://maps.google.com/maps/api/js?v=3.21"></script>
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-39365077-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+    <script type="text/javascript">
+        $(function () {
+            startTime();
+        });
+        function startTime() {
+            var today = new Date();
+            var h = today.getHours();
+            var m = today.getMinutes();
+            var s = today.getSeconds();
+            m = checkTime(m);
+            s = checkTime(s);
+            $("#liClock").html(
+            h + ":" + m + ":" + s);
+            var t = setTimeout(startTime, 500);
+        }
+        function checkTime(i) {
+            if (i < 10) { i = "0" + i };  // add zero in front of numbers < 10
+            return i;
+        }
+    </script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <div id="wrapper">
+            
+        <div class="divWaiting hide">
+            <div class="loading">
+                <div class="loading-bar"></div>
+                <div class="loading-bar"></div>
+                <div class="loading-bar"></div>
+                <div class="loading-bar"></div>
+            </div>
+        </div>
+            <!-- Navigation -->
+            <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+               
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <%--<img src="../images/HRMS1.png" height="40px" alt="AEGIS HR" style="margin:5px"/>
+                <a class="navbar-brand" href="#"><img src="../images/Aegis_CRM_Logo2.png"  height="45px" style="margin:2px"/></a>                --%>
+            </div>
+            <!-- /.navbar-header -->
+         
+            <ul class="nav navbar-top-links navbar-right">   
+                <li id="liClock" runat="server" style="color:#23527C" class="dropdown glyphicon">
+                </li>
+                <!-- /.dropdown -->
+                <li><a href="../MainLogout.aspx" title="Logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                </li>
+                <!-- /.dropdown -->
+            </ul>
+            <!-- /.navbar-top-links -->
+
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">                       
+                        <li>
+                            <a href="../Dashboard.aspx"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                        </li>
+                        <li  id="liControlPanel" runat="server" visible="false">
+                            <a href="#"><i class="fa fa-shield fa-fw"></i> Control Panel<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li id="liServiceCallAttendanceManager" runat="server" visible="false">
+                                    <a href="../ControlPanel/CallAttendanceManager.aspx">Service Call Attendance Manager</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li  id="liSettings" runat="server" visible="false">
+                            <a href="#"><i class="fa fa-wrench fa-fw"></i> Settings<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li id="liAddEditCity" runat="server" visible="false">
+                                    <a href="../Common/City.aspx">Add/Edit City</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li  id="liHR" runat="server" visible="false">
+                            <a href="#"><i class="fa fa-user fa-fw"></i> HR<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li id="liAddEditRole" runat="server" visible="false">
+                                    <a href="../HR/RoleMaster.aspx">Add/Edit Role</a>
+                                </li>
+                                <li id="liManageRoleAccess" runat="server" visible="false">
+                                    <a href="../HR/RoleAccessLevel.aspx">Manage Role Access</a>
+                                </li>
+                                <li id="liAddEditEmployee" runat="server">
+                                    <a href="../HR/Employee.aspx">Add/Edit Member</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li id="liReport" runat="server" visible="false">
+                            <a href="#"><i class="fa fa-database fa-fw"></i> Reports<span class="fa arrow"></span></a>
+                            
+                            <!-- /.nav-second-level -->
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+            <!-- Page Content -->
+            <div id="page-wrapper">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+            <!-- /#page-wrapper -->
+        </div>
+        <!-- /#wrapper -->
+    </form>
+</body>
+</html>
+
