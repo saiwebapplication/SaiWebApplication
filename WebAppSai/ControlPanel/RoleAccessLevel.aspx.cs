@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Autofac;
+using Business.Utilities;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -21,11 +23,15 @@ namespace WebAppSai.ControlPanel
 
         private void LoadRoles()
         {
-            Business.HR.RoleMaster ObjRole = new Business.HR.RoleMaster();
-            DataTable DT = ObjRole.GetAll();
-            if (DT != null)
+            DataTable dtRole;
+            using (var scope = Startup.Container.BeginLifetimeScope())
             {
-                ddlRole.DataSource = DT;
+                var role = scope.Resolve<IRole>();
+                dtRole = role.Role_GetAll();
+            }
+            if (dtRole != null)
+            {
+                ddlRole.DataSource = dtRole;
                 ddlRole.DataBind();
             }
         }
@@ -34,10 +40,13 @@ namespace WebAppSai.ControlPanel
         {
             UncheckAll();
             int RoleId = Convert.ToInt32(ddlRole.SelectedValue);
-            Business.HR.RoleAccessLevel ObjRoleAccessLevel = new Business.HR.RoleAccessLevel();
-            DataTable DT = ObjRoleAccessLevel.GetByRoleId(RoleId);
-
-            foreach (DataRow dr in DT.Rows)
+            DataTable dtRoleAccessLevel;
+            using (var scope = Startup.Container.BeginLifetimeScope())
+            {
+                var role = scope.Resolve<IRoleAccessLevel>();
+                dtRoleAccessLevel = role.RoleAccessLevel_GetByRoleId(RoleId);
+            }
+            foreach (DataRow dr in dtRoleAccessLevel.Rows)
             {
                 if (ChkControlPanel.Items.FindByValue(dr["PermissionId"].ToString()) != null)
                     ChkControlPanel.Items.FindByValue(dr["PermissionId"].ToString()).Selected = true;
@@ -65,9 +74,12 @@ namespace WebAppSai.ControlPanel
 
         private void SaveRoleAccessLevel(int PermissionId, bool IsChecked)
         {
-            Business.HR.RoleAccessLevel ObjRoleAccessLevel = new Business.HR.RoleAccessLevel();
             int RoleId = Convert.ToInt32(ddlRole.SelectedValue);
-            ObjRoleAccessLevel.Save(RoleId, PermissionId, IsChecked);
+            using (var scope = Startup.Container.BeginLifetimeScope())
+            {
+                var role = scope.Resolve<IRoleAccessLevel>();
+                role.RoleAccessLevel_Save(RoleId, PermissionId, IsChecked);
+            }
         }
     }
 }

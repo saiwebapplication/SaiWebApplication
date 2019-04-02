@@ -67,13 +67,22 @@ namespace WebAppSai {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl liControlPanel;
         
         /// <summary>
-        /// liServiceCallAttendanceManager control.
+        /// liRole control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl liServiceCallAttendanceManager;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl liRole;
+        
+        /// <summary>
+        /// liRoleAccessLevel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl liRoleAccessLevel;
         
         /// <summary>
         /// liSettings control.
@@ -92,42 +101,6 @@ namespace WebAppSai {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl liAddEditCity;
-        
-        /// <summary>
-        /// liHR control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl liHR;
-        
-        /// <summary>
-        /// liAddEditRole control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl liAddEditRole;
-        
-        /// <summary>
-        /// liManageRoleAccess control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl liManageRoleAccess;
-        
-        /// <summary>
-        /// liAddEditEmployee control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl liAddEditEmployee;
         
         /// <summary>
         /// liReport control.

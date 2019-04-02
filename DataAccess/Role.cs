@@ -21,8 +21,8 @@ namespace DataAccess
                     cmd.Connection = con;
                     cmd.CommandText = "usp_Role_Save";
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@HolidayId", roleId);
-                    cmd.Parameters.AddWithValue("@HolidayProfileId", roleName);
+                    cmd.Parameters.AddWithValue("@RoleId", roleId);
+                    cmd.Parameters.AddWithValue("@RoleName", roleName);
                     if (con.State == ConnectionState.Closed)
                         con.Open();
                     rowsAffacted = cmd.ExecuteNonQuery();

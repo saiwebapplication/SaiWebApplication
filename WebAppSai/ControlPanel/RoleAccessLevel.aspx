@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="RoleAccessLevel.aspx.cs" Inherits="WebAppSai.ControlPanel.RoleAccessLevel" %>
+﻿<%@ Page Title="ROLE ACCESS CONTROL" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="RoleAccessLevel.aspx.cs" Inherits="WebAppSai.ControlPanel.RoleAccessLevel" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">

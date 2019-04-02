@@ -21,8 +21,7 @@ namespace WebAppSai
             DataSet dsUserRole;
             string roles = string.Empty;
             int userId = 0;
-            var container = Business.ContainerConfig.Configure();
-            using (var scope = container.BeginLifetimeScope())
+            using (var scope = Startup.Container.BeginLifetimeScope())
             {
                 var login = scope.Resolve<ILogin>();
                 using (dtUser = login.GetUserByUserName(txtUserName.Text.Trim(), txtPassword.Text))

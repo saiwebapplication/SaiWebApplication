@@ -496,6 +496,7 @@
     <Content Include="bower_components\raphael\license.txt" />
     <Content Include="bower_components\raphael\raphael-min.js" />
     <Content Include="bower_components\raphael\raphael.js" />
+    <Content Include="ControlPanel\Role.aspx" />
     <Content Include="ControlPanel\RoleAccessLevel.aspx" />
     <Content Include="Dashboard.aspx" />
     <Content Include="dist\css\custom-popup.css" />
@@ -545,9 +546,15 @@
     <Content Include="js\MyJavaScript.js" />
     <Content Include="js\signature_pad.js" />
     <Content Include="Login.aspx" />
-    <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ControlPanel\Role.aspx.cs">
+      <DependentUpon>Role.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ControlPanel\Role.aspx.designer.cs">
+      <DependentUpon>Role.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ControlPanel\RoleAccessLevel.aspx.cs">
       <DependentUpon>RoleAccessLevel.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -579,7 +586,22 @@
     <Compile Include="Main.Master.designer.cs">
       <DependentUpon>Main.Master</DependentUpon>
     </Compile>
+    <Compile Include="MainLogout.aspx.cs">
+      <DependentUpon>MainLogout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MainLogout.aspx.designer.cs">
+      <DependentUpon>MainLogout.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+    <Compile Include="UserControl\Message.ascx.cs">
+      <DependentUpon>Message.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\Message.ascx.designer.cs">
+      <DependentUpon>Message.ascx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="bower_components\bootstrap-social\.bower.json" />
@@ -893,6 +915,9 @@
     <Content Include="bower_components\raphael\bower.json" />
     <Content Include="Main.Master" />
     <None Include="packages.config" />
+    <Content Include="MainLogout.aspx" />
+    <Content Include="UserControl\Message.ascx" />
+    <Content Include="Web.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
