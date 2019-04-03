@@ -14,9 +14,9 @@ namespace WebAppSai
             {
                 lblUserName.Text = string.Format("Welcome {0}", Business.Context.UserName);
 
-                liControlPanel.Visible = HttpContext.Current.User.IsInRole(Model.ControlPanel.CONTROLPANEL);
-                liRole.Visible = HttpContext.Current.User.IsInRole(Model.ControlPanel.CONTROLPANEL);
-                liRoleAccessLevel.Visible = HttpContext.Current.User.IsInRole(Model.ControlPanel.CONTROLPANEL);
+                liControlPanel.Visible = HttpContext.Current.User.IsInRole(Model.SecureObject.CONTROL_PANEL);
+                liRole.Visible = HttpContext.Current.User.IsInRole(Model.SecureObject.ROLE);
+                liRoleAccessLevel.Visible = HttpContext.Current.User.IsInRole(Model.SecureObject.ROLE_ACCESS_LEVEL);
             }
         }
     }

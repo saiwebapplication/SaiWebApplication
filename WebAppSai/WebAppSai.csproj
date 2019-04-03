@@ -496,6 +496,10 @@
     <Content Include="bower_components\raphael\license.txt" />
     <Content Include="bower_components\raphael\raphael-min.js" />
     <Content Include="bower_components\raphael\raphael.js" />
+    <Content Include="ControlPanel\ActivityMaster.aspx" />
+    <Content Include="ControlPanel\ClassMaster.aspx" />
+    <Content Include="ControlPanel\EventType.aspx" />
+    <Content Include="ControlPanel\LocalityMaster.aspx" />
     <Content Include="ControlPanel\Role.aspx" />
     <Content Include="ControlPanel\RoleAccessLevel.aspx" />
     <Content Include="Dashboard.aspx" />
@@ -548,6 +552,34 @@
     <Content Include="Login.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ControlPanel\ActivityMaster.aspx.cs">
+      <DependentUpon>ActivityMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ControlPanel\ActivityMaster.aspx.designer.cs">
+      <DependentUpon>ActivityMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ControlPanel\ClassMaster.aspx.cs">
+      <DependentUpon>ClassMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ControlPanel\ClassMaster.aspx.designer.cs">
+      <DependentUpon>ClassMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ControlPanel\EventType.aspx.cs">
+      <DependentUpon>EventType.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ControlPanel\EventType.aspx.designer.cs">
+      <DependentUpon>EventType.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ControlPanel\LocalityMaster.aspx.cs">
+      <DependentUpon>LocalityMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ControlPanel\LocalityMaster.aspx.designer.cs">
+      <DependentUpon>LocalityMaster.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ControlPanel\Role.aspx.cs">
       <DependentUpon>Role.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

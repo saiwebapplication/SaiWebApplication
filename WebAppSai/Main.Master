@@ -128,6 +128,18 @@
                                 <li id="liRoleAccessLevel" runat="server" visible="false">
                                     <a href="../ControlPanel/RoleAccessLevel.aspx">Role Access Control</a>
                                 </li>
+                                <li id="li1" runat="server" visible="false">
+                                    <a href="../ControlPanel/ActivityMaster.aspx">Add/Edit Activity</a>
+                                </li>
+                                <li id="li2" runat="server" visible="false">
+                                    <a href="../ControlPanel/ClassMaster.aspx">Add/Edit Class</a>
+                                </li>
+                                <li id="li3" runat="server" visible="false">
+                                    <a href="../ControlPanel/EventType.aspx">Add/Edit Event Type</a>
+                                </li>
+                                <li id="li4" runat="server" visible="false">
+                                    <a href="../ControlPanel/LocalityMaster.aspx">Add/Edit Locality</a>
+                                </li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>

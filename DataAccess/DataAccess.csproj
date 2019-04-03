@@ -42,9 +42,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActivityMaster.cs" />
+    <Compile Include="ClassMaster.cs" />
+    <Compile Include="EventType.cs" />
+    <Compile Include="IActivityMaster.cs" />
+    <Compile Include="IClassMaster.cs" />
+    <Compile Include="IEventType.cs" />
+    <Compile Include="ILocalityMaster.cs" />
     <Compile Include="ILogin.cs" />
     <Compile Include="IRole.cs" />
     <Compile Include="IRoleAccessLevel.cs" />
+    <Compile Include="LocalityMaster.cs" />
     <Compile Include="Login.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Role.cs" />

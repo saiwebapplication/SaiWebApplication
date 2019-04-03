@@ -19,7 +19,9 @@ namespace Business.Utilities
         public int Role_Save(int roleId, string roleName)
         {
             return _Role.Role_Save(roleId, roleName);
+
         }
+
         public DataTable Role_GetAll()
         {
             return _Role.Role_GetAll();

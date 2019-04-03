@@ -62,6 +62,8 @@
                         <div class="panel-body">
                             <asp:CheckBoxList ID="ChkControlPanel" runat="server" AutoPostBack="True" OnSelectedIndexChanged="CheckListBox_SelectedIndexChanged">
                                 <asp:ListItem Value="1000" Text="&nbsp;&nbsp;&nbsp;CONTROL PANEL"></asp:ListItem>
+                                <asp:ListItem Value="1001" Text="&nbsp;&nbsp;&nbsp;ROLE"></asp:ListItem>
+                                <asp:ListItem Value="1002" Text="&nbsp;&nbsp;&nbsp;ROLE ACCESS CONTROL"></asp:ListItem>
                             </asp:CheckBoxList>
                         </div>
                     </div>
