@@ -64,6 +64,10 @@
                                 <asp:ListItem Value="1000" Text="&nbsp;&nbsp;&nbsp;CONTROL PANEL"></asp:ListItem>
                                 <asp:ListItem Value="1001" Text="&nbsp;&nbsp;&nbsp;ROLE"></asp:ListItem>
                                 <asp:ListItem Value="1002" Text="&nbsp;&nbsp;&nbsp;ROLE ACCESS CONTROL"></asp:ListItem>
+                                <asp:ListItem Value="1003" Text="&nbsp;&nbsp;&nbsp;ACTIVITY MASTER"></asp:ListItem>
+                                <asp:ListItem Value="1004" Text="&nbsp;&nbsp;&nbsp;CLASS MASTER"></asp:ListItem>
+                                <asp:ListItem Value="1005" Text="&nbsp;&nbsp;&nbsp;EVENT TYPE"></asp:ListItem>
+                                <asp:ListItem Value="1006" Text="&nbsp;&nbsp;&nbsp;LOCALITY MASTER"></asp:ListItem>
                             </asp:CheckBoxList>
                         </div>
                     </div>

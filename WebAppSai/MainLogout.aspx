@@ -11,8 +11,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <asp:ScriptManager ID="ScriptManager1" runat="server">  
-        </asp:ScriptManager>  
+   <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server"></asp:ToolkitScriptManager>
         <asp:Timer ID="Timer1" runat="server" Interval="2000" ontick="Timer1_Tick">  
         </asp:Timer>
         

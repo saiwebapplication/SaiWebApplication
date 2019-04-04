@@ -85,40 +85,40 @@ namespace WebAppSai {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl liRoleAccessLevel;
         
         /// <summary>
-        /// li1 control.
+        /// liActivityMaster control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl li1;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl liActivityMaster;
         
         /// <summary>
-        /// li2 control.
+        /// liClassMaster control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl li2;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl liClassMaster;
         
         /// <summary>
-        /// li3 control.
+        /// liEventType control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl li3;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl liEventType;
         
         /// <summary>
-        /// li4 control.
+        /// liLocalityMaster control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl li4;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl liLocalityMaster;
         
         /// <summary>
         /// liSettings control.

@@ -32,7 +32,8 @@ namespace WebAppSai.ControlPanel
             ClassId = 0;
             Message.Text = string.Empty;
             btnSave.Text = "Save";
-            txtClassName.Text = "";
+            txtClassName.Text = string.Empty;
+            txtDescription.Text = string.Empty;
         }
 
         private void LoadClassList()
@@ -47,6 +48,21 @@ namespace WebAppSai.ControlPanel
             {
                 dgvClass.DataSource = dtClass;
                 dgvClass.DataBind();
+            }
+        }
+
+        private void ClassMaster_GetById()
+        {
+            DataTable dtClass;
+            using (var scope = Startup.Container.BeginLifetimeScope())
+            {
+                var Class = scope.Resolve<IClassMaster>();
+                dtClass = Class.ClassMaster_GetById(ClassId);
+            }
+            if (dtClass != null && dtClass.Rows.Count>0)
+            {
+                txtClassName.Text = dtClass.Rows[0]["ClassName"].ToString();
+                txtDescription.Text = dtClass.Rows[0]["Description"].ToString();
             }
         }
 
@@ -88,8 +104,7 @@ namespace WebAppSai.ControlPanel
             {
                 ClassId = Convert.ToInt32(e.CommandArgument.ToString());
                 GridViewRow row = (GridViewRow)(((ImageButton)e.CommandSource).NamingContainer);
-
-                txtClassName.Text = row.Cells[1].Text;
+                ClassMaster_GetById();
                 btnSave.Text = "Update";
             }
             else if (e.CommandName == "Del")

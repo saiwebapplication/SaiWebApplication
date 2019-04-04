@@ -36,8 +36,8 @@ namespace WebAppSai.ControlPanel
             DataTable dtEventType;
             using (var scope = Startup.Container.BeginLifetimeScope())
             {
-                var EventType = scope.Resolve<IClassMaster>();
-                dtEventType = EventType.ClassMaster_GetAll();
+                var EventType = scope.Resolve<IEventType>();
+                dtEventType = EventType.EventType_GetAll();
             }
             if (dtEventType != null)
             {
@@ -93,8 +93,8 @@ namespace WebAppSai.ControlPanel
                 int response = 0;
                 using (var scope = Startup.Container.BeginLifetimeScope())
                 {
-                    var Class = scope.Resolve<IClassMaster>();
-                    response = Class.ClassMaster_Delete(Convert.ToInt32(e.CommandArgument.ToString()));
+                    var EventType = scope.Resolve<IEventType>();
+                    response = EventType.EventType_Delete(Convert.ToInt32(e.CommandArgument.ToString()));
                 }
                 if (response > 0)
                 {

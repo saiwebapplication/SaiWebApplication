@@ -17,6 +17,10 @@ namespace WebAppSai
                 liControlPanel.Visible = HttpContext.Current.User.IsInRole(Model.SecureObject.CONTROL_PANEL);
                 liRole.Visible = HttpContext.Current.User.IsInRole(Model.SecureObject.ROLE);
                 liRoleAccessLevel.Visible = HttpContext.Current.User.IsInRole(Model.SecureObject.ROLE_ACCESS_LEVEL);
+                liActivityMaster.Visible = HttpContext.Current.User.IsInRole(Model.SecureObject.ACTIVITY_MASTER);
+                liClassMaster.Visible = HttpContext.Current.User.IsInRole(Model.SecureObject.CLASS_MASTER);
+                liEventType.Visible = HttpContext.Current.User.IsInRole(Model.SecureObject.EVENT_TYPE);
+                liLocalityMaster.Visible = HttpContext.Current.User.IsInRole(Model.SecureObject.LOCALITY_MASTER);
             }
         }
     }

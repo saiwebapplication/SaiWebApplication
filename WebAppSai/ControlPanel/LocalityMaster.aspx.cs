@@ -51,6 +51,21 @@ namespace WebAppSai.ControlPanel
             }
         }
 
+        private void LocalityMaster_GetById()
+        {
+            DataTable dtLocality;
+            using (var scope = Startup.Container.BeginLifetimeScope())
+            {
+                var Locality = scope.Resolve<ILocalityMaster>();
+                dtLocality = Locality.LocalityMaster_GetById(LocalityId);
+            }
+            if (dtLocality != null && dtLocality.Rows.Count > 0)
+            {
+                txtLocalityName.Text = dtLocality.Rows[0]["LocalityName"].ToString();
+                txtDescription.Text = dtLocality.Rows[0]["Description"].ToString();
+            }
+        }
+
         protected void btnCancel_Click(object sender, EventArgs e)
         {
             ClearControls();
@@ -89,8 +104,7 @@ namespace WebAppSai.ControlPanel
             {
                 LocalityId = Convert.ToInt32(e.CommandArgument.ToString());
                 GridViewRow row = (GridViewRow)(((ImageButton)e.CommandSource).NamingContainer);
-
-                txtLocalityName.Text = row.Cells[1].Text;
+                LocalityMaster_GetById();
                 btnSave.Text = "Update";
             }
             else if (e.CommandName == "Del")

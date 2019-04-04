@@ -1,17 +1,14 @@
 ﻿<%@ Page Title="ADD/EDIT ROLE" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="Role.aspx.cs" Inherits="WebAppSai.ControlPanel.Role" %>
 
 <%@ Register Src="../UserControl/Message.ascx" TagName="Message" TagPrefix="uc3" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <script type="text/javascript">
-        function Validation() {
-            if (!checkforvaliddata(eval('document.forms[0].' + '<%=txtRole.ClientID%>'), "Role Name", 1)) return false;
-            return true;
-        }
-    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
     <br />
+
     <div class="row">
         <div class="col-lg-6">
             <div class="panel panel-default">
@@ -20,19 +17,20 @@
                 </div>
                 <div class="panel-body">
                     <div class="row">
-                        <div class="col-lg-6">
+                        <div class="col-lg-12">
                             <div class="form-group has-error">
                                 Role Name
                                 <asp:TextBox ID="txtRole" CssClass="form-control" runat="server"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ControlToValidate="txtRole" runat="server" ErrorMessage="Please enter role name"></asp:RequiredFieldValidator>
                             </div>
                         </div>
-                        <div class="col-lg-6">
+                        <div class="col-lg-12">
                             <div class="form-group">
                                 <br />
                                 <asp:Button ID="btnSave" runat="server" Text="Save" class="btn btn-outline btn-success"
-                                    OnClick="btnSave_Click" />
+                                    OnClick="btnSave_Click" CausesValidation="true" />
                                 <asp:Button ID="btnCancel" runat="server" Text="Cancel" class="btn btn-outline btn-warning"
-                                    OnClick="btnCancel_Click" />
+                                    OnClick="btnCancel_Click" CausesValidation="false" />
                             </div>
                         </div>
                         <div class="col-lg-12">
