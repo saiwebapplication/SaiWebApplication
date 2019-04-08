@@ -24,8 +24,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <br />
-    <div class="row">
-    </div>
-    <div class="row">
+    <div class="row" style="text-align:center">
+        <img src="images/giphy.gif" style="margin:auto; height:80vh; opacity: 0.2;filter: alpha(opacity=20);" />
     </div>
 </asp:Content>

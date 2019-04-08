@@ -72,6 +72,18 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-lg-4">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            Main Menu
+                        </div>
+                        <div class="panel-body">
+                            <asp:CheckBoxList ID="chkMainMenu" runat="server" AutoPostBack="True" OnSelectedIndexChanged="CheckListBox_SelectedIndexChanged">
+                                <asp:ListItem Value="1007" Text="&nbsp;&nbsp;&nbsp;ADD/EDIT MEMBERS"></asp:ListItem>
+                            </asp:CheckBoxList>
+                        </div>
+                    </div>
+                </div>
             </div>
         </ContentTemplate>
     </asp:UpdatePanel>

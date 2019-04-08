@@ -50,12 +50,16 @@ namespace WebAppSai.ControlPanel
             {
                 if (ChkControlPanel.Items.FindByValue(dr["PermissionId"].ToString()) != null)
                     ChkControlPanel.Items.FindByValue(dr["PermissionId"].ToString()).Selected = true;
+                if (chkMainMenu.Items.FindByValue(dr["PermissionId"].ToString()) != null)
+                    chkMainMenu.Items.FindByValue(dr["PermissionId"].ToString()).Selected = true;
             }
         }
 
         private void UncheckAll()
         {
             foreach (ListItem lstItem in ChkControlPanel.Items)
+                lstItem.Selected = false;
+            foreach (ListItem lstItem in chkMainMenu.Items)
                 lstItem.Selected = false;
         }
 

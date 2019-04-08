@@ -4,6 +4,8 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    <link href="/images/omm.png" type="image/x-icon" rel="shortcut icon" />
+    <link href="/images/omm.png" type="image/x-icon" rel="icon" />
     <script type="text/javascript">
         window.history.forward(1); 
     </script>

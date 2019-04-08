@@ -56,10 +56,14 @@
     <Compile Include="Utilities\IEventType.cs" />
     <Compile Include="Utilities\ILocalityMaster.cs" />
     <Compile Include="Utilities\ILogin.cs" />
+    <Compile Include="Utilities\IMember.cs" />
+    <Compile Include="Utilities\IMemberSettings.cs" />
     <Compile Include="Utilities\IRole.cs" />
     <Compile Include="Utilities\IRoleAccessLevel.cs" />
     <Compile Include="Utilities\LocalityMaster.cs" />
     <Compile Include="Utilities\Login.cs" />
+    <Compile Include="Utilities\Member.cs" />
+    <Compile Include="Utilities\MemberSettings.cs" />
     <Compile Include="Utilities\Role.cs" />
     <Compile Include="Utilities\RoleAccessLevel.cs" />
   </ItemGroup>

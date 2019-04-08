@@ -523,6 +523,7 @@
     <Content Include="images\Error.png" />
     <Content Include="images\favicon.ico" />
     <Content Include="images\female-avatar.jpg" />
+    <Content Include="images\giphy.gif" />
     <Content Include="images\go_icon.gif" />
     <Content Include="images\gridLoader.gif" />
     <Content Include="images\HRMS1.png" />
@@ -533,6 +534,7 @@
     <Content Include="images\male-avatar.png" />
     <Content Include="images\mylogo.png" />
     <Content Include="images\not-available.png" />
+    <Content Include="images\omm.png" />
     <Content Include="images\outtime_icon.PNG" />
     <Content Include="images\preloader.gif" />
     <Content Include="images\Rejected.png" />
@@ -625,6 +627,13 @@
     </Compile>
     <Compile Include="MainLogout.aspx.designer.cs">
       <DependentUpon>MainLogout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Members.aspx.cs">
+      <DependentUpon>Members.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Members.aspx.designer.cs">
+      <DependentUpon>Members.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -949,6 +958,7 @@
     <Content Include="Main.Master" />
     <None Include="packages.config" />
     <Content Include="MainLogout.aspx" />
+    <Content Include="Members.aspx" />
     <Content Include="UserControl\Message.ascx" />
     <Content Include="Web.config" />
     <None Include="Web.Debug.config">

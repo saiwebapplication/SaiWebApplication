@@ -15,5 +15,6 @@ namespace Model
         public const string CLASS_MASTER = "1004";
         public const string EVENT_TYPE = "1005";
         public const string LOCALITY_MASTER = "1006";
+        public const string MEMBERS = "1007";
     }
 }

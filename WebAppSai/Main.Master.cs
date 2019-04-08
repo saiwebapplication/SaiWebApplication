@@ -21,6 +21,7 @@ namespace WebAppSai
                 liClassMaster.Visible = HttpContext.Current.User.IsInRole(Model.SecureObject.CLASS_MASTER);
                 liEventType.Visible = HttpContext.Current.User.IsInRole(Model.SecureObject.EVENT_TYPE);
                 liLocalityMaster.Visible = HttpContext.Current.User.IsInRole(Model.SecureObject.LOCALITY_MASTER);
+                liMembers.Visible = HttpContext.Current.User.IsInRole(Model.SecureObject.MEMBERS);
             }
         }
     }
