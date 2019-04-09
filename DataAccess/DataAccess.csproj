@@ -51,14 +51,26 @@
     <Compile Include="ILocalityMaster.cs" />
     <Compile Include="ILogin.cs" />
     <Compile Include="IMember.cs" />
+    <Compile Include="IMemberActivity.cs" />
+    <Compile Include="IMemberAddress.cs" />
+    <Compile Include="IMemberJob.cs" />
+    <Compile Include="IMemberRelationMapping.cs" />
     <Compile Include="IMemberSettings.cs" />
+    <Compile Include="IOccupation.cs" />
+    <Compile Include="IRelation.cs" />
     <Compile Include="IRole.cs" />
     <Compile Include="IRoleAccessLevel.cs" />
     <Compile Include="LocalityMaster.cs" />
     <Compile Include="Login.cs" />
     <Compile Include="Member.cs" />
+    <Compile Include="MemberActivity.cs" />
+    <Compile Include="MemberAddress.cs" />
+    <Compile Include="MemberJob.cs" />
+    <Compile Include="MemberRelationMapping.cs" />
     <Compile Include="MemberSettings.cs" />
+    <Compile Include="Occupation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Relation.cs" />
     <Compile Include="Role.cs" />
     <Compile Include="RoleAccessLevel.cs" />
   </ItemGroup>

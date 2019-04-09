@@ -19,7 +19,11 @@ namespace Business.Utilities
         public int MemberSettings_Save(Model.MemberSettings memberSettings)
         {
             return _MemberSettings.MemberSettings_Save(memberSettings);
+        }
 
+        public DataTable MemberSettings_GetById(Model.MemberSettings memberSettings)
+        {
+            return _MemberSettings.MemberSettings_GetById(memberSettings);
         }
     }
 }

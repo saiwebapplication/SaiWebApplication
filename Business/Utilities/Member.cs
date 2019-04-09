@@ -16,7 +16,7 @@ namespace Business.Utilities
             this._Member = member;
         }
 
-        public int ActivityMaster_Save(Model.Member member)
+        public int Member_Save(Model.Member member)
         {
             return _Member.Member_Save(member);
 

@@ -9,7 +9,7 @@ namespace DataAccess
     {
         public int Member_Save(Model.Member member)
         {
-            int rowsAffacted = 0;
+            int memberId = 0;
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["constr"].ToString()))
             {
                 using (SqlCommand cmd = new SqlCommand())
@@ -17,26 +17,33 @@ namespace DataAccess
                     cmd.Connection = con;
                     cmd.CommandText = "usp_Member_Save";
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@MemberId", member.MemberId);
+                    cmd.Parameters.AddWithValue("@MemberId", member.MemberId).Direction = ParameterDirection.InputOutput; ;
                     cmd.Parameters.AddWithValue("@Salutation", member.Salutation);
                     cmd.Parameters.AddWithValue("@FirstName", member.FirstName);
                     cmd.Parameters.AddWithValue("@LastName", member.LastName);
                     cmd.Parameters.AddWithValue("@BarCodeNo", member.BarcodeNo);
                     cmd.Parameters.AddWithValue("@CardId", member.CardId);
-                    cmd.Parameters.AddWithValue("@OccupationId", member.OccupationId);
+                    if (member.OccupationId == 0)
+                        cmd.Parameters.AddWithValue("@OccupationId", DBNull.Value);
+                    else
+                        cmd.Parameters.AddWithValue("@OccupationId", member.OccupationId);
                     cmd.Parameters.AddWithValue("@Gender", member.Gender);
                     cmd.Parameters.AddWithValue("@PersonalEmail", member.Email);
                     cmd.Parameters.AddWithValue("@PersonalMobile", member.Mobile);
                     cmd.Parameters.AddWithValue("@Image", member.Image);
-                    cmd.Parameters.AddWithValue("@DOB", member.Dob);
+                    if (member.Dob == DateTime.MinValue)
+                        cmd.Parameters.AddWithValue("@DOB", DBNull.Value);
+                    else
+                        cmd.Parameters.AddWithValue("@DOB", member.Dob);
                     cmd.Parameters.AddWithValue("@CreatedBy", member.CreatedBy);
                     if (con.State == ConnectionState.Closed)
                         con.Open();
-                    rowsAffacted = cmd.ExecuteNonQuery();
+                    cmd.ExecuteNonQuery();
+                    memberId = Convert.ToInt32(cmd.Parameters["@MemberId"].Value);
                     con.Close();
                 }
             }
-            return rowsAffacted;
+            return memberId;
         }
 
         public DataTable Member_GetAll(Model.Member member)

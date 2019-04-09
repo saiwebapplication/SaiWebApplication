@@ -144,7 +144,7 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li id="liMembers" runat="server" visible="false">
-                            <a href="../Members.aspx">Add/Edit Members</a>
+                            <a href="../Members.aspx"><i  class="fa fa-users fa-fw"></i> Add/Edit Members</a>
                         </li>
                         <li id="liReport" runat="server" visible="false">
                             <a href="#"><i class="fa fa-database fa-fw"></i> Reports<span class="fa arrow"></span></a>

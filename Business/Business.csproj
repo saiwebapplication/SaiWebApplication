@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="ContainerConfig.cs" />
     <Compile Include="Context.cs" />
+    <Compile Include="ControlConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\ActivityMaster.cs" />
     <Compile Include="Utilities\ClassMaster.cs" />
@@ -57,13 +58,25 @@
     <Compile Include="Utilities\ILocalityMaster.cs" />
     <Compile Include="Utilities\ILogin.cs" />
     <Compile Include="Utilities\IMember.cs" />
+    <Compile Include="Utilities\IMemberActivity.cs" />
+    <Compile Include="Utilities\IMemberAddress.cs" />
+    <Compile Include="Utilities\IMemberJob.cs" />
+    <Compile Include="Utilities\IMemberRelationMapping.cs" />
     <Compile Include="Utilities\IMemberSettings.cs" />
+    <Compile Include="Utilities\IOccupation.cs" />
+    <Compile Include="Utilities\IRelation.cs" />
     <Compile Include="Utilities\IRole.cs" />
     <Compile Include="Utilities\IRoleAccessLevel.cs" />
     <Compile Include="Utilities\LocalityMaster.cs" />
     <Compile Include="Utilities\Login.cs" />
     <Compile Include="Utilities\Member.cs" />
+    <Compile Include="Utilities\MemberActivity.cs" />
+    <Compile Include="Utilities\MemberAddress.cs" />
+    <Compile Include="Utilities\MemberJob.cs" />
+    <Compile Include="Utilities\MemberRelationMapping.cs" />
     <Compile Include="Utilities\MemberSettings.cs" />
+    <Compile Include="Utilities\Occupation.cs" />
+    <Compile Include="Utilities\Relation.cs" />
     <Compile Include="Utilities\Role.cs" />
     <Compile Include="Utilities\RoleAccessLevel.cs" />
   </ItemGroup>

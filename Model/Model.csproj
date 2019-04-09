@@ -42,6 +42,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Member.cs" />
+    <Compile Include="MemberActivity.cs" />
+    <Compile Include="MemberAddress.cs" />
+    <Compile Include="MemberJob.cs" />
+    <Compile Include="MemberRelationMapping.cs" />
     <Compile Include="MemberSettings.cs" />
     <Compile Include="SecureObject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
