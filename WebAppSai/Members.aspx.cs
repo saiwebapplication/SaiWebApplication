@@ -41,6 +41,12 @@ namespace WebAppSai
             set { ViewState["MemberRelationMappingId"] = value; }
         }
 
+        public int MemberTypeMemberMappingId
+        {
+            get { return Convert.ToInt32(ViewState["MemberTypeMemberMappingId"]); }
+            set { ViewState["MemberTypeMemberMappingId"] = value; }
+        }
+
         private void Member_GetAll()
         {
             DataTable dtMember;
@@ -61,6 +67,41 @@ namespace WebAppSai
             ddlPerson.DataValueField = "MemberId";
             ddlPerson.DataBind();
             ddlPerson.InsertSelect();
+        }
+
+        private void MemberType_GetAll()
+        {
+            DataTable dtMemberType;
+            using (var scope = Startup.Container.BeginLifetimeScope())
+            {
+                var MemberType = scope.Resolve<IMemberType>();
+                dtMemberType = MemberType.MemberType_GetAll();
+            }
+            if (dtMemberType != null)
+            {
+                ddlMemberType.DataSource = dtMemberType;
+                ddlMemberType.DataTextField = "MemberTypeName";
+                ddlMemberType.DataValueField = "MemberTypeId";
+                ddlMemberType.DataBind();
+            }
+            ddlMemberType.InsertSelect();
+        }
+
+        private void MemberTypeMemberMapping_GetByMemberId()
+        {
+            DataTable dtMemberTypeMemberMapping;
+            using (var scope = Startup.Container.BeginLifetimeScope())
+            {
+                var MemberTypeMemberMapping = scope.Resolve<IMemberTypeMemberMapping>();
+                dtMemberTypeMemberMapping = MemberTypeMemberMapping.MemberTypeMemberMapping_GetByMemberId(MemberId);
+            }
+            if (dtMemberTypeMemberMapping != null && dtMemberTypeMemberMapping.Rows.Count > 0)
+            {
+                ddlMemberType.SelectedValue = dtMemberTypeMemberMapping.AsEnumerable()
+                    .Where(p => p["IsActive"].ToString().Equals("1")).CopyToDataTable()
+                    .Rows[0]["MemberTypeId"].ToString();
+                MemberTypeMemberMappingId = Convert.ToInt32(ddlMemberType.SelectedValue);
+            }
         }
 
         private void Member_GetById()
@@ -363,6 +404,7 @@ namespace WebAppSai
             txtLastName.Text = string.Empty;
             txtMobileNo.Text = string.Empty;
             ddlSalutation.SelectedIndex = 0;
+            ddlMemberType.SelectedIndex = 0;
             rbtnGender.SelectedIndex = 0;
         }
 
@@ -512,6 +554,7 @@ namespace WebAppSai
         {
             if (!IsPostBack)
             {
+                MemberType_GetAll();
                 Occupation_GetAll();
                 Member_GetAll();
             }
@@ -544,13 +587,14 @@ namespace WebAppSai
                 }
                 if (MemberId > 0)
                 {
+                    MemberTypeMemberMapping_Save();
                     ClearMemberControls();
                     Member_GetAll();
                     Message.IsSuccess = true;
                     Message.Text = "Saved Successfully";
                     Thread.Sleep(1000);
                     LocalityMaster_GetAll();
-                    ModalPopupExtender1.Show();
+                    OpenPopup();
                 }
                 else
                 {
@@ -565,6 +609,35 @@ namespace WebAppSai
             }
         }
 
+        private void MemberTypeMemberMapping_Save()
+        {
+            if (MemberTypeMemberMappingId != Convert.ToInt32(ddlMemberType.SelectedValue))
+            {
+                Model.MemberTypeMemberMapping memberTypeMemberMapping = new Model.MemberTypeMemberMapping()
+                {
+                    MemberId = this.MemberId,
+                    MemberTypeId = Convert.ToInt32(ddlMemberType.SelectedValue),
+                    CreatedBy = int.Parse(HttpContext.Current.User.Identity.Name)
+                };
+                using (var scope = Startup.Container.BeginLifetimeScope())
+                {
+                    var MemberTypeMemberMapping = scope.Resolve<IMemberTypeMemberMapping>();
+                    MemberId = MemberTypeMemberMapping.MemberTypeMemberMapping_Save(memberTypeMemberMapping);
+                }
+            }
+        }
+
+        private void OpenPopup()
+        {
+            TabContainer2.ActiveTabIndex = 0;
+            ClearActivityControls();
+            ClearAddressControls();
+            ClearJobControls();
+            ClearMemberRelationMappingControls();
+            ClearSettingsControls();
+            ModalPopupExtender1.Show();
+        }
+
         protected void btnCancel_Click(object sender, EventArgs e)
         {
             ClearAddressControls();
@@ -577,6 +650,7 @@ namespace WebAppSai
                 if (e.CommandName == "Ed")
                 {
                     MemberId = Convert.ToInt32(e.CommandArgument.ToString());
+                    MemberTypeMemberMapping_GetByMemberId();
                     Member_GetById();
                     btnSave.Text = "Update";
                 }
@@ -606,13 +680,7 @@ namespace WebAppSai
                     MemberId = Convert.ToInt32(e.CommandArgument.ToString());
                     LocalityMaster_GetAll();
                     MemberAddress_GetAll();
-                    TabContainer2.ActiveTabIndex = 0;
-                    ClearActivityControls();
-                    ClearAddressControls();
-                    ClearJobControls();
-                    ClearMemberRelationMappingControls();
-                    ClearSettingsControls();
-                    ModalPopupExtender1.Show();
+                    OpenPopup();
                 }
             }
             catch (Exception ex)
@@ -1047,7 +1115,7 @@ namespace WebAppSai
                         IsActive = bool.Parse(rbtnIsActive.SelectedValue),
                         IsAppLoginEnabled = bool.Parse(rbtnIsAppLoginEnabled.SelectedValue),
                         MemberId = this.MemberId,
-                        Password = txtPassword.Text,
+                        Password = txtPassword.Text.Encrypt(),
                         UserName = txtUserName.Text.Trim()
                     };
                     using (var scope = Startup.Container.BeginLifetimeScope())

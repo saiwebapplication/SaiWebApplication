@@ -56,6 +56,8 @@
     <Compile Include="IMemberJob.cs" />
     <Compile Include="IMemberRelationMapping.cs" />
     <Compile Include="IMemberSettings.cs" />
+    <Compile Include="IMemberType.cs" />
+    <Compile Include="IMemberTypeMemberMapping.cs" />
     <Compile Include="IOccupation.cs" />
     <Compile Include="IRelation.cs" />
     <Compile Include="IRole.cs" />
@@ -68,6 +70,8 @@
     <Compile Include="MemberJob.cs" />
     <Compile Include="MemberRelationMapping.cs" />
     <Compile Include="MemberSettings.cs" />
+    <Compile Include="MemberType.cs" />
+    <Compile Include="MemberTypeMemberMapping.cs" />
     <Compile Include="Occupation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Relation.cs" />

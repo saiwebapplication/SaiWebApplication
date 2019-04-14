@@ -9,7 +9,7 @@
     <script type="text/javascript">
         window.history.forward(1); 
     </script>
-    <title></title>
+    <title>LOGING OUT..</title>
 </head>
 <body>
     <form id="form1" runat="server">
