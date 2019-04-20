@@ -41,12 +41,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Event.cs" />
     <Compile Include="Member.cs" />
     <Compile Include="MemberActivity.cs" />
     <Compile Include="MemberAddress.cs" />
     <Compile Include="MemberJob.cs" />
     <Compile Include="MemberRelationMapping.cs" />
     <Compile Include="MemberSettings.cs" />
+    <Compile Include="MemberTypeMemberMapping.cs" />
     <Compile Include="SecureObject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -48,12 +48,17 @@
     <Compile Include="ContainerConfig.cs" />
     <Compile Include="Context.cs" />
     <Compile Include="ControlConfig.cs" />
+    <Compile Include="Helper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\ActivityMaster.cs" />
+    <Compile Include="Utilities\Branch.cs" />
     <Compile Include="Utilities\ClassMaster.cs" />
+    <Compile Include="Utilities\Event.cs" />
     <Compile Include="Utilities\EventType.cs" />
     <Compile Include="Utilities\IActivityMaster.cs" />
+    <Compile Include="Utilities\IBranch.cs" />
     <Compile Include="Utilities\IClassMaster.cs" />
+    <Compile Include="Utilities\IEvent.cs" />
     <Compile Include="Utilities\IEventType.cs" />
     <Compile Include="Utilities\ILocalityMaster.cs" />
     <Compile Include="Utilities\ILogin.cs" />
@@ -63,6 +68,8 @@
     <Compile Include="Utilities\IMemberJob.cs" />
     <Compile Include="Utilities\IMemberRelationMapping.cs" />
     <Compile Include="Utilities\IMemberSettings.cs" />
+    <Compile Include="Utilities\IMemberType.cs" />
+    <Compile Include="Utilities\IMemberTypeMemberMapping.cs" />
     <Compile Include="Utilities\IOccupation.cs" />
     <Compile Include="Utilities\IRelation.cs" />
     <Compile Include="Utilities\IRole.cs" />
@@ -75,6 +82,8 @@
     <Compile Include="Utilities\MemberJob.cs" />
     <Compile Include="Utilities\MemberRelationMapping.cs" />
     <Compile Include="Utilities\MemberSettings.cs" />
+    <Compile Include="Utilities\MemberType.cs" />
+    <Compile Include="Utilities\MemberTypeMemberMapping.cs" />
     <Compile Include="Utilities\Occupation.cs" />
     <Compile Include="Utilities\Relation.cs" />
     <Compile Include="Utilities\Role.cs" />
