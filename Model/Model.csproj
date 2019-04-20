@@ -47,6 +47,7 @@
     <Compile Include="MemberJob.cs" />
     <Compile Include="MemberRelationMapping.cs" />
     <Compile Include="MemberSettings.cs" />
+    <Compile Include="MemberTypeMemberMapping.cs" />
     <Compile Include="SecureObject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

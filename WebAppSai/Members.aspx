@@ -46,6 +46,13 @@
                             <div class="row">
                                 <div class="col-lg-3">
                                     <div class="form-group has-error">
+                                        Member Type
+                                        <asp:DropDownList ID="ddlMemberType" runat="server" CssClass="form-control">
+                                        </asp:DropDownList>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3">
+                                    <div class="form-group has-error">
                                         &nbsp;
                                         <asp:DropDownList ID="ddlSalutation" runat="server" CssClass="form-control">
                                             <asp:ListItem Text="Mr" Value="Mr"></asp:ListItem>
