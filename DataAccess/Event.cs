@@ -94,7 +94,7 @@ namespace DataAccess
                     cmd.Connection = con;
                     cmd.CommandText = "usp_HR_Event_Save";
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@EventId", evnt.EventId).Direction = ParameterDirection.InputOutput; ;
+                    cmd.Parameters.AddWithValue("@EventId", evnt.EventId).Direction = ParameterDirection.InputOutput;
                     cmd.Parameters.AddWithValue("@EventTypeId", evnt.EventTypeId);
                     cmd.Parameters.AddWithValue("@EventName", evnt.EventName);
                     cmd.Parameters.AddWithValue("@Description", evnt.Description);
