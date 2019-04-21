@@ -53,6 +53,7 @@
     <Compile Include="Utilities\ActivityMaster.cs" />
     <Compile Include="Utilities\ClassMaster.cs" />
     <Compile Include="Utilities\EventType.cs" />
+    <Compile Include="Utilities\Host.cs" />
     <Compile Include="Utilities\IActivityMaster.cs" />
     <Compile Include="Utilities\IClassMaster.cs" />
     <Compile Include="Utilities\IEventType.cs" />
