@@ -15,7 +15,7 @@ namespace WebAppSai
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
-            {
+            {                
                 EventType_GetAll();
                 Branch_GetAll();
             }

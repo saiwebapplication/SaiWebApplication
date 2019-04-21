@@ -10,6 +10,10 @@ namespace Business.Utilities
     public class Branch : IBranch
     {
         DataAccess.IBranch _Branch;
+        public Branch(DataAccess.IBranch branch)
+        {
+            this._Branch = branch;
+        }
         public DataTable Branch_GetAll()
         {
             return _Branch.Branch_GetAll();
