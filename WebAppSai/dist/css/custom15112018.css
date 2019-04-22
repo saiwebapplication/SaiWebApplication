@@ -301,3 +301,15 @@ table.popup-table {
 .checkbox input[type="checkbox"] {
     float: none;
 }
+.radioButtonList input[type="radio"] {
+    width: auto;
+    float: left;
+    margin: 5px;
+}
+
+.radioButtonList label {
+    width: auto;
+    display: inline;
+    float: left;
+    margin: 5px;
+}

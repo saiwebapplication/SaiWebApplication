@@ -1,11 +1,11 @@
-﻿<%@ Page Title="ADD/EDIT Event" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="Event.aspx.cs" Inherits="WebAppSai.Event" %>
-
+﻿<%@ Page Title="ADD/EDIT BATCH" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="Batch.aspx.cs" Inherits="WebAppSai.Batch" %>
 <%@ Register Src="UserControl/Message.ascx" TagName="Message" TagPrefix="uc3" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
     <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server"></asp:ToolkitScriptManager>
     <br />
     <asp:UpdateProgress ID="UpdateProgress1" runat="server" AssociatedUpdatePanelID="UpdatePanel1" DisplayAfter="1">
@@ -26,62 +26,91 @@
                 <div class="col-lg-6">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Add/Edit Events
+                            Add/Edit Batch
                         </div>
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="form-group has-error">
-                                        Event Type
-                                        <asp:DropDownList ID="ddlEventType" runat="server" CssClass="form-control">
+                                        Class
+                                        <asp:DropDownList ID="ddlClass" runat="server" CssClass="form-control">
                                         </asp:DropDownList>
+                                        <asp:RequiredFieldValidator id="reqFavoriteColor" Text="Please select class" 
+                                            InitialValue="0" ControlToValidate="ddlClass" ForeColor="Red"
+                                            Runat="server" /> 
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="form-group has-error">
-                                        Branch
-                                        <asp:DropDownList ID="ddlBranch" runat="server" CssClass="form-control">
-                                        </asp:DropDownList>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12">
-                                    <div class="form-group has-error">
-                                        Event Name
-                                        <asp:TextBox ID="txtEventName" CssClass="form-control" runat="server"></asp:TextBox>
-                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ControlToValidate="txtEventName" runat="server" ErrorMessage="Please enter event name" ForeColor="Red"></asp:RequiredFieldValidator>
+                                        Batch Name
+                                        <asp:TextBox ID="txtBatchName" CssClass="form-control" runat="server"></asp:TextBox>
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ControlToValidate="txtBatchName" runat="server" ErrorMessage="Please enter batch name" ForeColor="Red"></asp:RequiredFieldValidator>
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="form-group">
                                         Description
-                                        <asp:TextBox ID="txtDescription" CssClass="form-control" runat="server" TextMode="MultiLine"></asp:TextBox>
+                                    <asp:TextBox ID="txtDescription" CssClass="form-control" runat="server" TextMode="MultiLine"></asp:TextBox>
+                                    </div>
+                                </div>
+                                 <div class="col-lg-12">
+                                    <div class="form-group has-error">
+                                        Branch
+                                        <asp:DropDownList ID="ddlBranch" runat="server" CssClass="form-control">
+                                        </asp:DropDownList>
+                                        <asp:RequiredFieldValidator id="RequiredFieldValidator2" 
+                                            Text="Please select branch" InitialValue="0" 
+                                            ControlToValidate="ddlBranch" ForeColor="Red"
+                                            Runat="server" />
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="form-group has-error">
-                                        Venue
-                                        <asp:TextBox ID="txtVenue" CssClass="form-control" runat="server"></asp:TextBox>
-                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" ControlToValidate="txtVenue" runat="server" ErrorMessage="Please enter venue" ForeColor="Red"></asp:RequiredFieldValidator>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12">
-                                    <div class="form-group has-error">
-                                        Event Start Date
-                                        <asp:TextBox ID="txtEventStartDate" CssClass="form-control" runat="server"></asp:TextBox>
+                                        Start Date
+                                        <asp:TextBox ID="txtStartDate" CssClass="form-control" runat="server"></asp:TextBox>
                                         <asp:CalendarExtender ID="CalendarExtender1" runat="server" Enabled="True"
-                                            Format="dd MMM yyyy" TargetControlID="txtEventStartDate">
+                                            Format="dd MMM yyyy" TargetControlID="txtStartDate">
                                         </asp:CalendarExtender>
-                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" ControlToValidate="txtEventStartDate" runat="server" ErrorMessage="Please enter event start date" ForeColor="Red"></asp:RequiredFieldValidator>
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" ControlToValidate="txtStartDate" runat="server" 
+                                            ErrorMessage="Please enter start date" ForeColor="Red"></asp:RequiredFieldValidator>
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="form-group has-error">
-                                        Event End Date
-                                        <asp:TextBox ID="txtEventEndDate" CssClass="form-control" runat="server"></asp:TextBox>
+                                        End Date
+                                        <asp:TextBox ID="txtEndDate" CssClass="form-control" runat="server"></asp:TextBox>
                                         <asp:CalendarExtender ID="CalendarExtender2" runat="server" Enabled="True"
-                                            Format="dd MMM yyyy" TargetControlID="txtEventEndDate">
+                                            Format="dd MMM yyyy" TargetControlID="txtEndDate">
                                         </asp:CalendarExtender>
-                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator4" ControlToValidate="txtEventEndDate" runat="server" ErrorMessage="Please enter event end date" ForeColor="Red"></asp:RequiredFieldValidator>
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator4" ControlToValidate="txtEndDate" runat="server" 
+                                            ErrorMessage="Please enter end date" ForeColor="Red"></asp:RequiredFieldValidator>
+                                    </div>
+                                </div>
+                                 <div class="col-lg-12">
+                                    <div class="form-group has-error">
+                                        Year
+                                        <asp:DropDownList ID="ddlYear" runat="server" CssClass="form-control">
+                                        </asp:DropDownList>
+                                        <asp:RequiredFieldValidator id="RequiredFieldValidator5" 
+                                            Text="Please select year" InitialValue="0" 
+                                            ControlToValidate="ddlYear" ForeColor="Red"
+                                            Runat="server" />
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="form-group has-error">
+                                        Host
+                                        <asp:DropDownList ID="ddlHost" runat="server" CssClass="form-control">
+                                        </asp:DropDownList>
+                                        <asp:RequiredFieldValidator id="RequiredFieldValidator6" 
+                                            Text="Please select host" InitialValue="0" 
+                                            ControlToValidate="ddlHost" ForeColor="Red"
+                                            Runat="server" />
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 has-error">
+                                    <div class="form-group">
+                                        <asp:CheckBox ID="chkCompleted" runat="server" Text="Is Completed" CssClass="btn btn-success" />
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
@@ -94,51 +123,40 @@
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
-                                    <uc3:Message ID="Message" runat="server" />
+                                    <uc3:message id="Message" runat="server" />
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6" style="min-height: 1000px">
+                <div class="col-lg-6">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Event List
+                            Batch List
                         </div>
                         <div class="panel-body">
                             <div class="table-responsive">
                                 <center>
-                                    <asp:GridView ID="dgvEvent" runat="server" Width="100%" AutoGenerateColumns="false" class="table table-striped"
-                                        GridLines="None" AllowPaging="false" CellPadding="0" CellSpacing="0" DataKeyNames="EventId" ForeColor="#333333" OnRowCommand="dgvEvent_RowCommand">
+                                    <asp:GridView ID="dgvBatch" runat="server" Width="100%" AutoGenerateColumns="false" class="table table-striped"
+                                        GridLines="None" AllowPaging="false" CellPadding="0" CellSpacing="0" DataKeyNames="BatchId" ForeColor="#333333" OnRowCommand="dgvBatch_RowCommand">
                                         <Columns>
                                             <asp:TemplateField HeaderText="SL" ItemStyle-Width="15px">
                                                 <ItemTemplate>
                                                     <%#Container.DataItemIndex+1 %>
                                                 </ItemTemplate>
                                             </asp:TemplateField>
-                                            <asp:BoundField DataField="EventName" HeaderText="Event" />
-                                            <asp:BoundField DataField="BranchName" HeaderText="Branch" />
-                                            <asp:BoundField DataField="Venue" HeaderText="Venue" />
-                                            <asp:TemplateField HeaderText="Start Date">
+                                            <asp:BoundField DataField="ClassName" HeaderText="Class Name" />
+                                            <asp:BoundField DataField="BatchName" HeaderText="Batch Name" />
+                                            <asp:TemplateField ItemStyle-Width="15px">
                                                 <ItemTemplate>
-                                                    <%# Convert.ToDateTime(Eval("EventStartDate").ToString()).ToString("dd MMM yyyy") %>
-                                                </ItemTemplate>
-                                            </asp:TemplateField>
-                                            <asp:TemplateField HeaderText="End Date">
-                                                <ItemTemplate>
-                                                    <%# Convert.ToDateTime(Eval("EventEndDate").ToString()).ToString("dd MMM yyyy") %>
+                                                    <asp:ImageButton ID="btnEdit" runat="server" ImageUrl="~/Images/edit_button.png" CommandName="Ed"
+                                                        Width="15px" Height="15px" CommandArgument='<%# Eval("BatchId") %>' CausesValidation="false" />
                                                 </ItemTemplate>
                                             </asp:TemplateField>
                                             <asp:TemplateField ItemStyle-Width="15px">
                                                 <ItemTemplate>
-                                                    <asp:LinkButton ID="btnEdit" runat="server" class="fa fa-pencil-square-o fa-fw" CommandName="Ed" CausesValidation="false"
-                                                        CommandArgument='<%# Eval("EventId") %>'></asp:LinkButton>
-                                                </ItemTemplate>
-                                            </asp:TemplateField>
-                                            <asp:TemplateField ItemStyle-Width="15px">
-                                                <ItemTemplate>
-                                                    <asp:LinkButton ID="btnDelete" runat="server" class="fa fa-trash-o fa-fw" CausesValidation="false"
-                                                        CommandName="Del" OnClientClick="return confirm('Are You Sure?');" CommandArgument='<%# Eval("EventId") %>'></asp:LinkButton>
+                                                    <asp:ImageButton ID="btnDelete" runat="server" ImageUrl="~/Images/delete_button.png" CausesValidation="false"
+                                                        CommandName="Del" Width="15px" Height="15px" OnClientClick="return confirm('Are You Sure?');" CommandArgument='<%# Eval("BatchId") %>' />
                                                 </ItemTemplate>
                                             </asp:TemplateField>
                                         </Columns>
@@ -164,4 +182,5 @@
             </div>
         </ContentTemplate>
     </asp:UpdatePanel>
+
 </asp:Content>

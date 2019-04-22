@@ -13,7 +13,7 @@ namespace DataAccess
     {
         public int Host_Save(Model.Host host)
         {
-            int memberId = 0;
+            int hostId = 0;
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["constr"].ToString()))
             {
                 using (SqlCommand cmd = new SqlCommand())
@@ -30,11 +30,11 @@ namespace DataAccess
                     if (con.State == ConnectionState.Closed)
                         con.Open();
                     cmd.ExecuteNonQuery();
-                    memberId = Convert.ToInt32(cmd.Parameters["@MemberId"].Value);
+                    hostId = Convert.ToInt32(cmd.Parameters["@HostId"].Value);
                     con.Close();
                 }
             }
-            return memberId;
+            return hostId;
         }
 
         public DataTable Host_GetAll(Model.Host host)

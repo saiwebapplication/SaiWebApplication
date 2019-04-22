@@ -4,20 +4,6 @@
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <style type="text/css">
-        .radioButtonList input[type="radio"] {
-            width: auto;
-            float: left;
-            margin: 5px;
-        }
-
-        .radioButtonList label {
-            width: auto;
-            display: inline;
-            float: left;
-            margin: 5px;
-        }
-    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server"></asp:ToolkitScriptManager>
@@ -44,13 +30,18 @@
                         </div>
                         <div class="panel-body">
                             <div class="row">
-                                <div class="col-lg-3">
+                                <div class="col-lg-12">
                                     <div class="form-group has-error">
                                         Member Type
                                         <asp:DropDownList ID="ddlMemberType" runat="server" CssClass="form-control">
                                         </asp:DropDownList>
+                                        <asp:RequiredFieldValidator id="RequiredFieldValidator6" 
+                                            Text="Please select member type" InitialValue="0" 
+                                            ControlToValidate="ddlMemberType" ForeColor="Red"
+                                            Runat="server" />
                                     </div>
                                 </div>
+                                <div class="clearfix"></div>
                                 <div class="col-lg-3">
                                     <div class="form-group has-error">
                                         &nbsp;

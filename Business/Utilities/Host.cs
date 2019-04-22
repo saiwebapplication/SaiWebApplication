@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Business.Utilities
 {
-    public class Host
+    public class Host : IHost
     {
         DataAccess.IHost _Host;
 

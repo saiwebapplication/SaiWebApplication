@@ -79,7 +79,26 @@
                         </div>
                         <div class="panel-body">
                             <asp:CheckBoxList ID="chkMainMenu" runat="server" AutoPostBack="True" OnSelectedIndexChanged="CheckListBox_SelectedIndexChanged">
+                                <asp:ListItem Value="1008" Text="&nbsp;&nbsp;&nbsp;ADD/EDIT HOST"></asp:ListItem>
+                                <asp:ListItem Value="1009" Text="&nbsp;&nbsp;&nbsp;ADD/EDIT BATCH"></asp:ListItem>
                                 <asp:ListItem Value="1007" Text="&nbsp;&nbsp;&nbsp;ADD/EDIT MEMBERS"></asp:ListItem>
+                                <asp:ListItem Value="1015" Text="&nbsp;&nbsp;&nbsp;ADD/EDIT EVENT"></asp:ListItem>
+                            </asp:CheckBoxList>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            Lists & Reports
+                        </div>
+                        <div class="panel-body">
+                            <asp:CheckBoxList ID="ChkListReport" runat="server" AutoPostBack="True" OnSelectedIndexChanged="CheckListBox_SelectedIndexChanged">
+                                <asp:ListItem Value="1014" Text="&nbsp;&nbsp;&nbsp;REPORT"></asp:ListItem>
+                                <asp:ListItem Value="1010" Text="&nbsp;&nbsp;&nbsp;BATCH"></asp:ListItem>
+                                <asp:ListItem Value="1011" Text="&nbsp;&nbsp;&nbsp;EVENT"></asp:ListItem>
+                                <asp:ListItem Value="1012" Text="&nbsp;&nbsp;&nbsp;HOST"></asp:ListItem>
+                                <asp:ListItem Value="1013" Text="&nbsp;&nbsp;&nbsp;MEMBER"></asp:ListItem>
                             </asp:CheckBoxList>
                         </div>
                     </div>

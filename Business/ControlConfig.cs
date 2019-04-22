@@ -13,5 +13,11 @@ namespace Business
         {
             dropDownList.Items.Insert(0, new ListItem() { Text = "--Select--", Value = "0", Selected = true, Enabled = true });
         }
+
+        public static void InsertAll(this DropDownList dropDownList)
+        {
+            dropDownList.Items.Insert(0, new ListItem() { Text = "--All--", Value = "0", Selected = true, Enabled = true });
+        }
+
     }
 }

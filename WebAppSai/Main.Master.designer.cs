@@ -121,6 +121,24 @@ namespace WebAppSai {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl liLocalityMaster;
         
         /// <summary>
+        /// liHost control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl liHost;
+        
+        /// <summary>
+        /// liBatch control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl liBatch;
+        
+        /// <summary>
         /// liMembers control.
         /// </summary>
         /// <remarks>
@@ -130,6 +148,15 @@ namespace WebAppSai {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl liMembers;
         
         /// <summary>
+        /// liEvent control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl liEvent;
+        
+        /// <summary>
         /// liReport control.
         /// </summary>
         /// <remarks>
@@ -137,6 +164,42 @@ namespace WebAppSai {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl liReport;
+        
+        /// <summary>
+        /// liMemberReport control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl liMemberReport;
+        
+        /// <summary>
+        /// liEventReport control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl liEventReport;
+        
+        /// <summary>
+        /// liBatchReport control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl liBatchReport;
+        
+        /// <summary>
+        /// liHostReport control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl liHostReport;
         
         /// <summary>
         /// ContentPlaceHolder1 control.
