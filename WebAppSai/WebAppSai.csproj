@@ -515,6 +515,7 @@
     <Content Include="dist\css\timeline.css" />
     <Content Include="dist\js\custom.js" />
     <Content Include="dist\js\sb-admin-2.js" />
+    <Content Include="Enrolment.aspx" />
     <Content Include="Event.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Host.aspx" />
@@ -616,6 +617,13 @@
     </Compile>
     <Compile Include="Dashboard.aspx.designer.cs">
       <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Enrolment.aspx.cs">
+      <DependentUpon>Enrolment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Enrolment.aspx.designer.cs">
+      <DependentUpon>Enrolment.aspx</DependentUpon>
     </Compile>
     <Compile Include="Event.aspx.cs">
       <DependentUpon>Event.aspx</DependentUpon>

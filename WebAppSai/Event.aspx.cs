@@ -93,8 +93,6 @@ namespace WebAppSai
                     Event_GetAll();
                     Message.IsSuccess = true;
                     Message.Text = "Saved Successfully";
-                    Thread.Sleep(1000);
-                    OpenPopup();
                 }
                 else
                 {
@@ -107,11 +105,6 @@ namespace WebAppSai
                 Message.IsSuccess = false;
                 Message.Text = ex.Message;
             }
-        }
-        private void OpenPopup()
-        {
-            
-            ModalPopupExtender1.Show();
         }
         private void ClearEventControls()
         {
@@ -172,13 +165,6 @@ namespace WebAppSai
                         Message.Text = "Data Dependency Exists";
                     }
                 }
-                //else if (e.CommandName == "Settings")
-                //{
-                //    MemberId = Convert.ToInt32(e.CommandArgument.ToString());
-                //    LocalityMaster_GetAll();
-                //    MemberAddress_GetAll();
-                //    OpenPopup();
-                //}
             }
             catch (Exception ex)
             {

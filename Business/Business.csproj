@@ -54,6 +54,7 @@
     <Compile Include="Utilities\Batch.cs" />
     <Compile Include="Utilities\Branch.cs" />
     <Compile Include="Utilities\ClassMaster.cs" />
+    <Compile Include="Utilities\Enrolment.cs" />
     <Compile Include="Utilities\Event.cs" />
     <Compile Include="Utilities\EventType.cs" />
     <Compile Include="Utilities\Host.cs" />
@@ -61,6 +62,7 @@
     <Compile Include="Utilities\IBatch.cs" />
     <Compile Include="Utilities\IBranch.cs" />
     <Compile Include="Utilities\IClassMaster.cs" />
+    <Compile Include="Utilities\IEnrolment.cs" />
     <Compile Include="Utilities\IEvent.cs" />
     <Compile Include="Utilities\IEventType.cs" />
     <Compile Include="Utilities\IHost.cs" />

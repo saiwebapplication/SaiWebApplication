@@ -30,6 +30,7 @@ namespace WebAppSai
                 liMemberReport.Visible = HttpContext.Current.User.IsInRole(Model.SecureObject.MEMBER_REPORT);
                 liReport.Visible = HttpContext.Current.User.IsInRole(Model.SecureObject.REPORT);
                 liEvent.Visible = HttpContext.Current.User.IsInRole(Model.SecureObject.EVENT);
+                liEnrolment.Visible = HttpContext.Current.User.IsInRole(Model.SecureObject.ENROLMENT);
             }
         }
     }

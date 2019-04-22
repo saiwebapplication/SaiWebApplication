@@ -152,6 +152,9 @@
                         <li id="liMembers" runat="server" visible="false">
                             <a href="../Members.aspx"><i  class="fa fa-users fa-fw"></i> Add/Edit Members</a>
                         </li>
+                        <li id="liEnrolment" runat="server" visible="false">
+                            <a href="../Enrolment.aspx"><i  class="fa fa-bookmark fa-fw"></i> Enrolment</a>
+                        </li>
                         <li id="liEvent" runat="server" visible="false">
                             <a href="../Event.aspx"><i  class="fa fa-calendar fa-fw"></i> Add/Edit Event</a>
                         </li>

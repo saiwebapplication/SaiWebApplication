@@ -99,6 +99,7 @@
                                 <asp:ListItem Value="1011" Text="&nbsp;&nbsp;&nbsp;EVENT"></asp:ListItem>
                                 <asp:ListItem Value="1012" Text="&nbsp;&nbsp;&nbsp;HOST"></asp:ListItem>
                                 <asp:ListItem Value="1013" Text="&nbsp;&nbsp;&nbsp;MEMBER"></asp:ListItem>
+                                <asp:ListItem Value="1016" Text="&nbsp;&nbsp;&nbsp;ENROLMENT"></asp:ListItem>
                             </asp:CheckBoxList>
                         </div>
                     </div>
