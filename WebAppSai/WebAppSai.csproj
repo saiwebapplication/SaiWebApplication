@@ -511,6 +511,7 @@
     <Content Include="dist\css\timeline.css" />
     <Content Include="dist\js\custom.js" />
     <Content Include="dist\js\sb-admin-2.js" />
+    <Content Include="Event.aspx" />
     <Content Include="Global.asax" />
     <Content Include="images\404-Animation.gif" />
     <Content Include="images\add_to_cart.png" />
@@ -603,6 +604,13 @@
     </Compile>
     <Compile Include="Dashboard.aspx.designer.cs">
       <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Event.aspx.cs">
+      <DependentUpon>Event.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Event.aspx.designer.cs">
+      <DependentUpon>Event.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

@@ -43,11 +43,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ActivityMaster.cs" />
+    <Compile Include="Branch.cs" />
     <Compile Include="ClassMaster.cs" />
+    <Compile Include="Event.cs" />
     <Compile Include="EventType.cs" />
     <Compile Include="Host.cs" />
     <Compile Include="IActivityMaster.cs" />
+    <Compile Include="IBranch.cs" />
     <Compile Include="IClassMaster.cs" />
+    <Compile Include="IEvent.cs" />
     <Compile Include="IEventType.cs" />
     <Compile Include="IHost.cs" />
     <Compile Include="ILocalityMaster.cs" />
