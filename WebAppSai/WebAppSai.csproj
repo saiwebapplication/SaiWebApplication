@@ -678,6 +678,13 @@
     <Compile Include="Report\BatchReport.aspx.designer.cs">
       <DependentUpon>BatchReport.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Report\EnrolmentReport.aspx.cs">
+      <DependentUpon>EnrolmentReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\EnrolmentReport.aspx.designer.cs">
+      <DependentUpon>EnrolmentReport.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Report\EventReport.aspx.cs">
       <DependentUpon>EventReport.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1030,6 +1037,7 @@
     <Content Include="MainLogout.aspx" />
     <Content Include="Members.aspx" />
     <Content Include="Report\BatchReport.aspx" />
+    <Content Include="Report\EnrolmentReport.aspx" />
     <Content Include="Report\EventReport.aspx" />
     <Content Include="Report\HostReport.aspx" />
     <Content Include="Report\MemberReport.aspx" />
