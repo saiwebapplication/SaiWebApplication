@@ -615,6 +615,7 @@ namespace WebAppSai
             {
                 Model.MemberTypeMemberMapping memberTypeMemberMapping = new Model.MemberTypeMemberMapping()
                 {
+                    MemberTypeMemberMappingId = MemberTypeMemberMappingId,
                     MemberId = this.MemberId,
                     MemberTypeId = Convert.ToInt32(ddlMemberType.SelectedValue),
                     CreatedBy = int.Parse(HttpContext.Current.User.Identity.Name)

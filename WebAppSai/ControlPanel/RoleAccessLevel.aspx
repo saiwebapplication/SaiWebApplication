@@ -83,6 +83,7 @@
                                 <asp:ListItem Value="1009" Text="&nbsp;&nbsp;&nbsp;ADD/EDIT BATCH"></asp:ListItem>
                                 <asp:ListItem Value="1007" Text="&nbsp;&nbsp;&nbsp;ADD/EDIT MEMBERS"></asp:ListItem>
                                 <asp:ListItem Value="1015" Text="&nbsp;&nbsp;&nbsp;ADD/EDIT EVENT"></asp:ListItem>
+                                <asp:ListItem Value="1017" Text="&nbsp;&nbsp;&nbsp;ATTENDANCE"></asp:ListItem>
                             </asp:CheckBoxList>
                         </div>
                     </div>

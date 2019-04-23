@@ -51,6 +51,7 @@
     <Compile Include="Helper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\ActivityMaster.cs" />
+    <Compile Include="Utilities\Attendance.cs" />
     <Compile Include="Utilities\Batch.cs" />
     <Compile Include="Utilities\Branch.cs" />
     <Compile Include="Utilities\ClassMaster.cs" />
@@ -59,6 +60,7 @@
     <Compile Include="Utilities\EventType.cs" />
     <Compile Include="Utilities\Host.cs" />
     <Compile Include="Utilities\IActivityMaster.cs" />
+    <Compile Include="Utilities\IAttendance.cs" />
     <Compile Include="Utilities\IBatch.cs" />
     <Compile Include="Utilities\IBranch.cs" />
     <Compile Include="Utilities\IClassMaster.cs" />

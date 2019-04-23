@@ -183,8 +183,6 @@ namespace WebAppSai
             if (e.CommandName == "Ed")
             {
                 EnrolmentId = Convert.ToInt32(e.CommandArgument.ToString());
-                GridViewRow row = (GridViewRow)(((ImageButton)e.CommandSource).NamingContainer);
-
                 LoadEnrolmentById();
                 btnSave.Text = "Update";
             }

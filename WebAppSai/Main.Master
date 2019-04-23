@@ -158,6 +158,9 @@
                         <li id="liEvent" runat="server" visible="false">
                             <a href="../Event.aspx"><i  class="fa fa-calendar fa-fw"></i> Add/Edit Event</a>
                         </li>
+                        <li id="liAttendance" runat="server" visible="false">
+                            <a href="../Attendance.aspx"><i  class="fa fa-times-circle-o fa-fw"></i> Attendance</a>
+                        </li>
                         <li id="liReport" runat="server" visible="false">
                             <a href="#"><i class="fa fa-database fa-fw"></i> Lists & Reports<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">

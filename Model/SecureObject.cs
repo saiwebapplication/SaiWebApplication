@@ -25,5 +25,6 @@ namespace Model
         public const string REPORT = "1014";
         public const string EVENT = "1015";
         public const string ENROLMENT = "1016";
+        public const string ATTENDANCE = "1017";
     }
 }

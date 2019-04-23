@@ -16,7 +16,7 @@ namespace DataAccess
                     cmd.Connection = con;
                     cmd.CommandText = "usp_MemberTypeMemberMapping_Save";
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@MemberTypeMemberMappingd", memberTypeMemberMapping.MemberTypeMemberMappingId);
+                    cmd.Parameters.AddWithValue("@MemberTypeMemberMappingId", memberTypeMemberMapping.MemberTypeMemberMappingId);
                     cmd.Parameters.AddWithValue("@MemberId", memberTypeMemberMapping.MemberId);
                     cmd.Parameters.AddWithValue("@MemberTypeId", memberTypeMemberMapping.MemberTypeId);
                     cmd.Parameters.AddWithValue("@CreatedBy", memberTypeMemberMapping.CreatedBy);
