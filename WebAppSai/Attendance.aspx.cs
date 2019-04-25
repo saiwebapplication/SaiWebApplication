@@ -30,8 +30,15 @@ namespace WebAppSai
                 ddlClass.DataTextField = "ClassName";
                 ddlClass.DataValueField = "ClassId";
                 ddlClass.DataBind();
+
+                ddlClassEvent.DataSource = dtClass;
+                ddlClassEvent.DataTextField = "ClassName";
+                ddlClassEvent.DataValueField = "ClassId";
+                ddlClassEvent.DataBind();
             }
             ddlClass.InsertSelect();
+
+            ddlClassEvent.InsertSelect();
         }
         private void LoadBatchList()
         {
@@ -51,8 +58,34 @@ namespace WebAppSai
                 ddlBatch.DataTextField = "BatchName";
                 ddlBatch.DataValueField = "BatchId";
                 ddlBatch.DataBind();
+
+                ddlBatchEvent.DataSource = dtBatch;
+                ddlBatchEvent.DataTextField = "BatchName";
+                ddlBatchEvent.DataValueField = "BatchId";
+                ddlBatchEvent.DataBind();
             }
+            ddlBatchEvent.InsertSelect();
+
             ddlBatch.InsertSelect();
+        }
+
+        private void LoadEvents()
+        {
+            DataTable dtEvent;
+            Model.Event evnt = new Model.Event() { };
+            using (var scope = Startup.Container.BeginLifetimeScope())
+            {
+                var Event = scope.Resolve<IEvent>();
+                dtEvent = Event.Event_GetAll(evnt);
+            }
+            if (dtEvent != null)
+            {
+                ddlEvent.DataSource = dtEvent;
+                ddlEvent.DataTextField = "EventName";
+                ddlEvent.DataValueField = "EventId";
+                ddlEvent.DataBind();
+            }
+            ddlEvent.InsertSelect();
         }
         private void ClearStudentControls()
         {
@@ -98,6 +131,7 @@ namespace WebAppSai
                 AttendanceTypeId = 1;
                 LoadClassList();
                 LoadBatchList();
+                LoadEvents();
             }
         }
 
@@ -106,12 +140,26 @@ namespace WebAppSai
             LoadBatchList();
         }
 
+        protected void ddlClassEvent_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadBatchList();
+        }
         protected void btnSearch_Click(object sender, EventArgs e)
         {
             LoadAttendanceList();
         }
 
         protected void btnClear_Click(object sender, EventArgs e)
+        {
+            ClearStudentControls();
+        }
+
+        protected void btnSearchEvent_Click(object sender, EventArgs e)
+        {
+            LoadAttendanceList();
+        }
+
+        protected void btnClearEvent_Click(object sender, EventArgs e)
         {
             ClearStudentControls();
         }

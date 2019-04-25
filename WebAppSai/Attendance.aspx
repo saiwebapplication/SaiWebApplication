@@ -155,8 +155,71 @@
                                     <HeaderTemplate>
                                         Event Attendance
                                     </HeaderTemplate>
-                                    <ContentTemplate>
+                                      <ContentTemplate>
+                                        <div class="col-lg-4">
+                                            <div class="form-group has-error">
+                                                Class
+                                        <asp:DropDownList ID="ddlClassEvent" runat="server" AutoPostBack="True" CssClass="form-control" OnSelectedIndexChanged="ddlClass_SelectedIndexChanged">
+                                        </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" Text="Please select class"
+                                                    InitialValue="0" ControlToValidate="ddlClassEvent" ForeColor="Red"
+                                                    runat="server" />
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <div class="form-group has-error">
+                                                Batch
+                                        <asp:DropDownList ID="ddlBatchEvent" runat="server" CssClass="form-control">
+                                        </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" Text="Please select batch"
+                                                    InitialValue="0" ControlToValidate="ddlBatchEvent" ForeColor="Red"
+                                                    runat="server" />
+                                            </div>
+                                        </div>
+                                          <div class="col-lg-4">
+                                            <div class="form-group has-error">
+                                                Event
+                                        <asp:DropDownList ID="ddlEvent" runat="server" CssClass="form-control">
+                                        </asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator6" Text="Please select event"
+                                                    InitialValue="0" ControlToValidate="ddlEvent" ForeColor="Red"
+                                                    runat="server" />
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <div class="form-group has-error">
+                                                Attendance Date
+                                                <asp:TextBox ID="txtAttendanceDateEvent" CssClass="form-control" runat="server" Enabled="False"></asp:TextBox>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator5" ControlToValidate="txtAttendanceDateEvent" runat="server" ErrorMessage="Please enter attendance date" ForeColor="Red"></asp:RequiredFieldValidator>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <div class="form-group">
+                                                Enrolment No
+                                                <asp:TextBox ID="txtEnrolmentNoEvent" CssClass="form-control" runat="server"></asp:TextBox>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <div class="form-group">
+                                                Student
+                                                <asp:TextBox ID="txtStudentEvent" runat="server" CssClass="form-control" />
+                                                <asp:HiddenField ID="HiddenField1" runat="server" />
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="form-group">
+                                                <br />
+                                                <asp:Button ID="btnSearchEvent" runat="server" Text="Show" class="btn btn-outline btn-success"
+                                                    OnClick="btnSearchEvent_Click" />
+                                                <asp:Button ID="btnClearEvent" runat="server" Text="Clear" class="btn btn-outline btn-warning"
+                                                    OnClick="btnClearEvent_Click" CausesValidation="False" />
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <uc3:Message ID="Message1" runat="server" />
+                                        </div>
                                     </ContentTemplate>
+
                                 </asp:TabPanel>
                             </asp:TabContainer>
                         </div>
